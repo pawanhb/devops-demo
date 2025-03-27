@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-		<sonar.host.url>http://ec2-3-110-185-238.ap-south-1.compute.amazonaws.com/:9000</sonar.host.url>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<sonar.login>squ_a97be71737cf178dbf05818a3c60becfc28f90ae</sonar.login>
 		<sonar.projectKey>devops-demo</sonar.projectKey>
 		<sonar.organization>my-org</sonar.organization>
