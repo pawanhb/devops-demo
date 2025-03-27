@@ -28,6 +28,11 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>sqp_be5cf852381283c04dec2b8eebe8c3f9b42bc8c8</sonar.login>
+		<sonar.projectKey>devops-demo</sonar.projectKey>
+		<sonar.organization>my-org</sonar.organization>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -48,7 +53,24 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.10.0.2591</version>
+				<configuration>
+					<sonar.host.url>http://localhost:9000</sonar.host.url>
+					<sonar.login>squ_940cfd940cbc560372a6fcc5060ec36114e3187f</sonar.login>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>snapshots</id>
+			<name>jfrog local maven repo</name>
+			<url>http://localhost:8081/artifactory/devops-demo-libs-snapshot</url>
+		</repository>
+	</distributionManagement>
 
 </project>
