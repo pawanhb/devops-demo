@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 
 
 phases:
@@ -7,8 +7,8 @@ phases:
       - mvn clean install
       - echo Logging in to Amazon ECR...
       - aws --version
-      - $(aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/n0y2x5a0)
-      - REPOSITORY_URI=public.ecr.aws/n0y2x5a0/demoapp
+      - $(aws ecr-public get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 699475927716.dkr.ecr.ap-south-1.amazonaws.com)
+      - REPOSITORY_URI=699475927716.dkr.ecr.ap-south-1.amazonaws.com/demoapp/demoapp
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
